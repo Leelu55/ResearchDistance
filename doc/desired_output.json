@@ -1,0 +1,27 @@
+[
+  {
+    id: null,
+    title: 'Institutional Repositories and Research Data Curation in a Distributed Environment',
+    authors: [
+      {
+        _id: null,
+        firstName: 'Enrique',
+        lastName: 'Orduna-Malea',
+        adresses: [
+          {
+            raw: 'Polytech Univ Valencia UPV, Dept Audiovisual Commun Documentat & Hist Art, Valencia 46022, Spain.'
+          }
+        ]
+      },
+      {
+        _id: null,
+        firstName: 'John J.',
+        lastName: 'Regazzi',
+        adresses: [
+          'Long Isl Univ, Palmer Sch Lib & Informat Sci, Brookville, NY 11552 USA.',
+          'Long Isl Univ, Dept Comp Sci & Management Engn, Brookville, NY 11552 USA.'
+        ]
+      }
+    ]
+  }
+]
