@@ -18,28 +18,44 @@ function transformTitle(ti) {
   return cleanField(ti)
 }
 
+function authorIndex(resultArr, firstName, lastName) {
+    for (var i = 0; i < resultArr.length; i++) {
+      if (resultArr[i].firstName == firstName && resultArr[i].lastName == lastName) 
+        return i
+    }
+    return -1
+}
+
+function afIndex(af, firstName, lastName) {
+    var authorArr = af.split('<br>')
+    for (var i = 0; i < authorArr.length; i++) {
+      var clean = cleanField(authorArr[i])
+      authorArr[i] = {
+        firstName: clean.split(',')[1].trim(),
+        lastName : clean.split(',')[0].trim(),
+      }
+    }
+    
+    for (var i = 0; i < authorArr.length; i++) {
+      if (authorArr[i].firstName.charAt(0) == firstName.charAt(0) && authorArr[i].lastName == lastName) {
+        console.log('found!')
+        return i
+      }
+    }
+    return -1
+}
+
+
 // af is Authors Names field, c1 is Authors Address field (terminology used in WOS export file)
 // returns false, if no author or no address
-function transformAuthorsFieldIntoAuthorsArray(af, c1) {
+function transformAuthorsFieldIntoAuthorsArray(af, c1, rp) {
   var resultArr  = []
   var authorRaw  = ''
   var addressRaw = ''
-
-/*
-  var arr = af.split('<br>') 
-  for (var i = 0; i < arr.length; i++) {
-    authorFullName = arr[i].trim()
-    resultArr.push({
-      firstName : authorFullName.split(',')[1].trim(),
-      lastName  : authorFullName.split(',')[0].trim(),
-      adresses  : []
-    })
-  }
-  */
   
   // Split, trim and delete items in c1Arr, until we have a clean version of c1Arr
   var c1Arr = c1.split('<br>')
-  for (var i = c1Arr.length -1; i >= 0; i--) {
+  for (var i = c1Arr.length - 1; i >= 0; i--) {
     c1Arr[i] = cleanField(c1Arr[i])
     if (c1Arr[i].trim() == '')
       c1Arr.splice(i, 1)
@@ -48,107 +64,66 @@ function transformAuthorsFieldIntoAuthorsArray(af, c1) {
   // nothing remained in c1Arr, after cleaning it up? 
   if (c1Arr.length == 0)
     return false
+
+  var tmpResultArr = []
+  for (var i = 0; i < c1Arr.length; i++) {    
   
-  // special case when c1 field has only address
-  if (c1Arr.length == 1) {
-    
     // Case C1: no name "adress"
     if (c1Arr[0].split(']').length == 1) {
-      authorRaw = af
-      addressRaw = c1Arr[0]
+      var firstName = af.split(',')[1].trim()
+      var lastName  = af.split(',')[0].trim()
+
+      tmpResultArr.push({
+            firstName : firstName,
+            lastName  : lastName,
+            address   : c1Arr[0].trim() 
+          })
+      
     }
-    
-    // Case C1: "[Doe, John] address"
-    if (c1Arr[0].split(']').length == 2) {
-      authorRaw = c1Arr[0].split(']')[0].split('[')[1].trim()
-      addressRaw = c1Arr[0].split(']')[1].trim()
+    else {
+      authorRaw = c1Arr[i].split(']')[0].split('[')[1].trim()
+      addressRaw = c1Arr[i].split(']')[1].trim()
+      
+      var authors = authorRaw.split(';')
+      
+      for (var j = 0; j < authors.length; j++) {
+        var firstName = authors[j].split(',')[1].trim()
+        var lastName = authors[j].split(',')[0].trim()
+
+        tmpResultArr.push({
+          firstName : firstName,
+          lastName  : lastName,
+          address   : addressRaw
+        })
+      }
     }
-    
-    // return 1 author with 1 address
-    return [{
-      firstName : authorRaw.split(',')[1].trim(),
-      lastName  : authorRaw.split(',')[0].trim(),
-      addresses : [addressRaw]
-    }]
   }
+  
+  
+  for (var i = 0; i < tmpResultArr.length; i++) {    
+    var index = authorIndex(resultArr, tmpResultArr[i].firstName, tmpResultArr[i].lastName)
     
-  // now implement the complicated case:
-  // 1. multiple authors at one address (semicolon separated)
-  // 2. multiple authors (at different) locations
-  // 3. one author, multiple locations
-
-  if (c1Arr.length >= 2) {
-    
-    for (var i = c1Arr.length -1; i >= 0; i--) {
+    if (index == -1) {
       
-      if (authorRaw === '') {
-        authorRaw = c1Arr[i].split(']')[0].split('[')[1].trim()
-        addressRaw = c1Arr[i].split(']')[1].trim()
-        console.log(authorRaw + "+++++++++++++++++++++++++++++++++")
-
+      var rpLastName  = rp.split(',')[0].trim()
+      var rpFirstNameInitial = rp.split(',')[1].trim().charAt(0)
+      
+      var indexAF = afIndex(af, rpFirstNameInitial, rpLastName)
+      console.log(indexAF)
+      
+      if (!(rpLastName === tmpResultArr[i].lastName && rpFirstNameInitial === tmpResultArr[i].firstName.charAt(0)) && indexAF == -1) { // @todo authors who are authors and reprint authors at the same time should be included (af rp comparison)
+        resultArr.push({
+          firstName : tmpResultArr[i].firstName,
+          lastName  : tmpResultArr[i].lastName,
+          addresses : [tmpResultArr[i].address]
+        })
       }
-      
-      if (authorRaw != '' && c1Arr[i].split(']')[0].split('[')[1].trim() === authorRaw) {
-        
-        //authorRaw = c1Arr[i].split(']')[0].split('[')[1].trim()
-        addressRaw = c1Arr[i].split(']')[1].trim()
-        console.log(authorRaw + "*******************************************")
-
-        
-      }
-      
-      if (authorRaw != '' && c1Arr[i].split(']')[0].split('[')[1].trim() != authorRaw ) {
-        
-        if (authorRaw != '' && c1Arr[i].split(']')[0].split('[')[1].split(";").length > 1 ) {
-        
-          authorsSemicolonSeperated = c1Arr[i].split(']')[0].split('[')[1].split(";")
-          console.log(authorsSemicolonSeperated)
-        
-          for (var j = authorsSemicolonSeperated.length -1; j >=0; j--) {
-          
-            authorRaw = authorsSemicolonSeperated[j].trim()
-            addressRaw = c1Arr[i].split(']')[1].trim()
-          
-            var Record = {
-              firstName : authorRaw.split(',')[1].trim(),
-              lastName  : authorRaw.split(',')[0].trim(),
-              addresses : [addressRaw]
-            }  
-      
-            resultArr.push(Record)
-          }
-        }
-        
-        else {
-          authorRaw = c1Arr[i].split(']')[0].split('[')[1].trim()
-          addressRaw = c1Arr[i].split(']')[1].trim()
-          
-          
-          console.log(authorRaw + "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-        }
-      }
-    
-      
-      var Record = {
-        firstName : authorRaw.split(',')[1].trim(),
-        lastName  : authorRaw.split(',')[0].trim(),
-        addresses : [addressRaw]
-      }  
-      
-      resultArr.push(Record)
-      
-      
     }
-    console.log(authorRaw + "§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§")
     
-  }
-    
-  // now implement the complicated case:
-  // 1. multiple authors at one address
-  // 2. multiple authors (at different) locations
-  // 3. one author, multiple locations
-
-      
+    else {
+      resultArr[index].addresses.push(tmpResultArr[i].address)
+    }
+  }  
   return resultArr
 }
 
@@ -161,7 +136,8 @@ jsdom.env(
     $('table').each(function(i, table) {                        // iterate through all <table>s (table = record)
       var ti = ''
       var af = ''
-      var c1 = ''                             
+      var c1 = ''
+      var rp = ''                             
       
       $(table).find('tr').each(function(j, tr) {                // iterate through all <tr>s (tr = key + value pair) of the <table>s (table = record)
         var columnName  = $(tr).find('td:eq(0)').html().trim()  // get the key (i.e. "TI", "AF", "C1")
@@ -175,13 +151,16 @@ jsdom.env(
           
         if (columnName === 'C1') 
           c1 = columnValue
+          
+        if (columnName === 'RP')
+          rp = columnValue
       })
       
       if (ti) {                                                 // only save to result if a title exists
         var record = {
           id      : i,
           title   : transformTitle(ti),
-          authors : transformAuthorsFieldIntoAuthorsArray(af, c1)
+          authors : transformAuthorsFieldIntoAuthorsArray(af, c1, rp)
         }
         
         if (record.authors)                                     // only save to result set if authors not false
