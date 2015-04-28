@@ -28,20 +28,20 @@ function authorIndex(resultArr, firstName, lastName) {
 
 function afIndex(af, firstName, lastName) {
     var authorArr = af.split('<br>')
+    
     for (var i = 0; i < authorArr.length; i++) {
       var clean = cleanField(authorArr[i])
       authorArr[i] = {
         firstName: clean.split(',')[1].trim(),
         lastName : clean.split(',')[0].trim(),
       }
-    }
-    
-    for (var i = 0; i < authorArr.length; i++) {
-      if (authorArr[i].firstName.charAt(0) == firstName.charAt(0) && authorArr[i].lastName == lastName) {
+      console.log(authorArr[i])
+      if (authorArr[i].firstName.charAt(0) == firstName && authorArr[i].lastName == lastName) {
         console.log('found!')
         return i
       }
     }
+    
     return -1
 }
 
@@ -80,12 +80,14 @@ function transformAuthorsFieldIntoAuthorsArray(af, c1, rp) {
           })
       
     }
+    
+    //all cases apart from one author and one entry in c1 field without ["author"] before address
     else {
       authorRaw = c1Arr[i].split(']')[0].split('[')[1].trim()
       addressRaw = c1Arr[i].split(']')[1].trim()
       
       var authors = authorRaw.split(';')
-      
+      console.log(authors)
       for (var j = 0; j < authors.length; j++) {
         var firstName = authors[j].split(',')[1].trim()
         var lastName = authors[j].split(',')[0].trim()
@@ -103,21 +105,23 @@ function transformAuthorsFieldIntoAuthorsArray(af, c1, rp) {
   for (var i = 0; i < tmpResultArr.length; i++) {    
     var index = authorIndex(resultArr, tmpResultArr[i].firstName, tmpResultArr[i].lastName)
     
+    //author not in resultArray means new author
     if (index == -1) {
       
       var rpLastName  = rp.split(',')[0].trim()
       var rpFirstNameInitial = rp.split(',')[1].trim().charAt(0)
       
+      //comparing reprint author with entries in authorField (AF)
       var indexAF = afIndex(af, rpFirstNameInitial, rpLastName)
       console.log(indexAF)
       
-      if (!(rpLastName === tmpResultArr[i].lastName && rpFirstNameInitial === tmpResultArr[i].firstName.charAt(0)) && indexAF == -1) { // @todo authors who are authors and reprint authors at the same time should be included (af rp comparison)
-        resultArr.push({
-          firstName : tmpResultArr[i].firstName,
-          lastName  : tmpResultArr[i].lastName,
-          addresses : [tmpResultArr[i].address]
+      //if (!(rpLastName === tmpResultArr[i].lastName && rpFirstNameInitial === tmpResultArr[i].firstName.charAt(0)) && indexAF !== -1) { // @todo authors who are authors and reprint authors at the same time should be included (af rp comparison)
+      resultArr.push({
+        firstName : tmpResultArr[i].firstName,
+        lastName  : tmpResultArr[i].lastName,
+        addresses : [tmpResultArr[i].address]
         })
-      }
+      //}
     }
     
     else {
@@ -140,6 +144,7 @@ jsdom.env({
       var af = ''
       var c1 = ''
       var rp = ''                             
+      var py = ''
       
       $(table).find('tr').each(function(j, tr) {                // iterate through all <tr>s (tr = key + value pair) of the <table>s (table = record)
         var columnName  = $(tr).find('td:eq(0)').html().trim()  // get the key (i.e. "TI", "AF", "C1")
@@ -156,12 +161,16 @@ jsdom.env({
           
         if (columnName === 'RP')
           rp = columnValue
+          
+        if (columnName === 'PY')
+          py = columnValue
       })
       
       if (ti) {                                                 // only save to result if a title exists
         var record = {
           id      : i,
           title   : transformTitle(ti),
+          publicationYear   : transformTitle(py),
           authors : transformAuthorsFieldIntoAuthorsArray(af, c1, rp)
         }
         

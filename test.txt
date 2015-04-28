@@ -1,0 +1,144 @@
+null
+[ 'Kutay, Stephen' ]
+{ firstName: 'Stephen', lastName: 'Kutay' }
+found!
+0
+{ firstName: 'Alexandra', lastName: 'Naum' }
+found!
+0
+[ 'Orduna-Malea, Enrique' ]
+[ 'Regazzi, John J.' ]
+[ 'Regazzi, John J.' ]
+{ firstName: 'Enrique', lastName: 'Orduna-Malea' }
+found!
+0
+{ firstName: 'Enrique', lastName: 'Orduna-Malea' }
+found!
+0
+[ 'Corrall, Sheila' ]
+[ 'Corrall, Sheila' ]
+[ 'Corrall, Sheila' ]
+[ 'Kennan, Mary Anne', ' Afzal, Waseem' ]
+[ 'Kennan, Mary Anne' ]
+[ 'Kennan, Mary Anne' ]
+[ 'Kennan, Mary Anne' ]
+{ firstName: 'Sheila', lastName: 'Corrall' }
+found!
+0
+{ firstName: 'Sheila', lastName: 'Corrall' }
+found!
+0
+{ firstName: 'Sheila', lastName: 'Corrall' }
+found!
+0
+[ 'Buehler, Marianne A.' ]
+[ 'Buehler, Marianne A.' ]
+{ firstName: 'Marianne A.', lastName: 'Buehler' }
+found!
+0
+{ firstName: 'Cathie', lastName: 'Jilovsky' }
+found!
+0
+[ 'Altman, Micah' ]
+{ firstName: 'Micah', lastName: 'Altman' }
+found!
+0
+{ firstName: 'Ross', lastName: 'Coleman' }
+found!
+0
+{ firstName: 'Michael', lastName: 'Witt' }
+found!
+0
+{ firstName: 'JG', lastName: 'Neal' }
+found!
+0
+[ { id: 1,
+    title: 'Advancing Digital Repository Services for Faculty Primary Research Assets: An Exploratory Study',
+    publicationYear: '2014',
+    authors: 
+     [ { firstName: 'Stephen',
+         lastName: 'Kutay',
+         addresses: [ 'Calif State Univ Northridge, Northridge, CA 91330 USA.' ] } ] },
+  { id: 2,
+    title: 'Research data storage and management: library staff participation in showcasing research data at the University of Adelaide',
+    publicationYear: '2014',
+    authors: 
+     [ { firstName: 'Alexandra',
+         lastName: 'Naum',
+         addresses: [ 'Univ Adelaide, Metadata Serv, Adelaide, SA, Australia.' ] } ] },
+  { id: 3,
+    title: 'US academic libraries: understanding their web presence and their relationship with economic indicators',
+    publicationYear: '2014',
+    authors: 
+     [ { firstName: 'Enrique',
+         lastName: 'Orduna-Malea',
+         addresses: [ 'Polytech Univ Valencia UPV, Dept Audiovisual Commun Documentat & Hist Art, Valencia 46022, Spain.' ] },
+       { firstName: 'John J.',
+         lastName: 'Regazzi',
+         addresses: 
+          [ 'Long Isl Univ, Palmer Sch Lib & Informat Sci, Brookville, NY 11552 USA.',
+            'Long Isl Univ, Dept Comp Sci & Management Engn, Brookville, NY 11552 USA.' ] } ] },
+  { id: 4,
+    title: 'Bibliometrics and Research Data Management Services: Emerging Trends in Library Support for Research',
+    publicationYear: '2013',
+    authors: 
+     [ { firstName: 'Sheila',
+         lastName: 'Corrall',
+         addresses: 
+          [ 'Univ Pittsburgh, Lib & Informat Sci Program, Sch Informat Sci, Pittsburgh, PA 15260 USA.',
+            'Univ Sheffield, Informat Sch, Sheffield S10 2TN, S Yorkshire, England.',
+            'British Lib, London W1V 4BH, England.' ] },
+       { firstName: 'Mary Anne',
+         lastName: 'Kennan',
+         addresses: 
+          [ 'Charles Sturt Univ, Sch Informat Studies, Bathurst, NSW 2795, Australia.',
+            'Australian Grad Sch Management, Frank Lowy Lib, Sydney, NSW, Australia.',
+            'Univ New S Wales, Sydney, NSW 2052, Australia.',
+            'Univ Technol Sydney, Sydney, NSW 2007, Australia.' ] },
+       { firstName: 'Waseem',
+         lastName: 'Afzal',
+         addresses: [ 'Charles Sturt Univ, Sch Informat Studies, Bathurst, NSW 2795, Australia.' ] } ] },
+  { id: 7,
+    title: 'Building internal and external campus institutional repository relationships',
+    publicationYear: '2013',
+    authors: 
+     [ { firstName: 'Marianne A.',
+         lastName: 'Buehler',
+         addresses: 
+          [ 'Rochester Inst Technol, Publishing & Scholarship Support Ctr, Rochester, NY USA.',
+            'Rochester Inst Technol, RIT Digital Media Lib, Rochester, NY USA.' ] } ] },
+  { id: 8,
+    title: 'The CARM Centre: The Creation, Revelation and Evolution of a Print Repository',
+    publicationYear: '2013',
+    authors: 
+     [ { firstName: 'Cathie',
+         lastName: 'Jilovsky',
+         addresses: [ 'CAVAL Ltd, Bundoora, Vic 3083, Australia.' ] } ] },
+  { id: 9,
+    title: 'Transformative Effects of NDIIPP, the Case of the Henry A. Murray Archive',
+    publicationYear: '2009',
+    authors: 
+     [ { firstName: 'Micah',
+         lastName: 'Altman',
+         addresses: [ 'Harvard Univ, Fac Arts & Sci, Inst Quantitat Social Sci, Cambridge, MA 02138 USA.' ] } ] },
+  { id: 10,
+    title: 'Publishing and the digital library: adding value to scholarship and innovation to business',
+    publicationYear: '2009',
+    authors: 
+     [ { firstName: 'Ross',
+         lastName: 'Coleman',
+         addresses: [ 'Univ Sydney, Univ Lib, Sydney, NSW 2006, Australia.' ] } ] },
+  { id: 11,
+    title: 'Institutional Repositories and Research Data Curation in a Distributed Environment',
+    publicationYear: '2008',
+    authors: 
+     [ { firstName: 'Michael',
+         lastName: 'Witt',
+         addresses: [ 'Purdue Univ, W Lafayette, IN 47907 USA.' ] } ] },
+  { id: 12,
+    title: 'The ReCAP artifactual repository planning project',
+    publicationYear: '2004',
+    authors: 
+     [ { firstName: 'JG',
+         lastName: 'Neal',
+         addresses: [ 'Columbia Univ, Informat Serv, Butler Lib 517, New York, NY 10027 USA.' ] } ] } ]
