@@ -2,7 +2,7 @@
 var fs    = require('fs')
 var jsdom = require('jsdom')
 var util  = require('util');
-
+var jquery = fs.readFileSync("lib/jquery.js", "utf-8") 
 var output = []
 
 function cleanField(field) {
@@ -127,13 +127,15 @@ function transformAuthorsFieldIntoAuthorsArray(af, c1, rp) {
   return resultArr
 }
 
-jsdom.env(
-  fs.readFileSync('input.html', 'utf8').toString(),             // read input.html and pass the html into jsdom. jsdom creates a valid DOM for our html
-  ["http://code.jquery.com/jquery.js"],                         // make sure jQuery is loaded into the DOM, makes jQuery $ variable accessible through window.$ in the callback method
-  function (errors, window) {                                   // use window to access the DOM. Or window.$ to access the DOM via jQuery
-    $ = window.$                                                // convenience to write $ instead of window.$
+jsdom.env({
+  html: fs.readFileSync('input.html', 'utf8').toString(),             // read input.html and pass the html into jsdom. jsdom creates a valid DOM for our html
+  src : [jquery],                                                     // make sure jQuery is loaded into the DOM, makes jQuery $ variable accessible through window.$ in the callback method
+  
+  done: function (errors, window) {      
+    console.log(errors)                           // use window to access the DOM. Or window.$ to access the DOM via jQuery
+    var $ = window.$                                                    // convenience to write $ instead of window.$
     
-    $('table').each(function(i, table) {                        // iterate through all <table>s (table = record)
+    $('table').each(function(i, table) {                                // iterate through all <table>s (table = record)
       var ti = ''
       var af = ''
       var c1 = ''
@@ -169,4 +171,4 @@ jsdom.env(
     })
     console.log(util.inspect(output, false, null));
   }
-)
+})
