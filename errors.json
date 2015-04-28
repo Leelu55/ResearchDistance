@@ -1,0 +1,5 @@
+[ { ti: 'Forming Ganymede\'s grooves at smaller strain: Toward a self-consistent\n   local and global strain history for Ganymede',
+    af: 'Bland, Michael T.\n   <br>McKinnon, William B.',
+    c1: '[Bland, Michael T.] Washington Univ, Dept Earth &amp; Planetary Sci, St\n   Louis, MO 63130 USA.\n   <br>Washington Univ, McDonnell Ctr Space Sci, St Louis, MO 63130 USA.',
+    py: '2015',
+    error: [TypeError: Cannot read property 'trim' of undefined] } ]
