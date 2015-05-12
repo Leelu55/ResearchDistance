@@ -21,7 +21,7 @@ stdin(function(data) {
     cleanAddressArray.push(add)
   }
   
-  for (i = 0; i < cleanAddressArray.length; i++)
-    console.log(cleanAddressArray[i])
+
+    console.log((JSON.stringify(cleanAddressArray)))
 })
 

@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "geocoder": "^0.2.2",
+    "google-maps": "^2.1.1",
     "jsdom": "^5.1.0",
     "string": "^3.1.1",
     "underscore": "^1.8.3"

@@ -125,7 +125,7 @@ function transformAuthors(af, c1) {
 }
 
 jsdom.env({
-  html: fs.readFileSync('input_many.html', 'utf8').toString(),             // read input.html and pass the html into jsdom. jsdom creates a valid DOM for our html
+  html: fs.readFileSync('input_two.html', 'utf8').toString(),             // read input.html and pass the html into jsdom. jsdom creates a valid DOM for our html
   src : [jquery],                                                     // make sure jQuery is loaded into the DOM, makes jQuery $ variable accessible through window.$ in the callback method
   
   done: function (errors, window) {      
