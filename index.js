@@ -181,6 +181,9 @@ jsdom.env({
     })
     
     fs.writeFile('errors.json', util.inspect(exceptions, false, null), 'utf8')
-    console.log(util.inspect(output, false, null));
+    //output = (util.inspect(output, false, null));
+    console.error(output.length)
+    console.log(JSON.stringify(output))
+    //console.log(JSON.stringify({a: 1, b: 2}))
   }
 })
