@@ -1,144 +1,178 @@
-null
-[ 'Kutay, Stephen' ]
-{ firstName: 'Stephen', lastName: 'Kutay' }
-found!
+78
 0
-{ firstName: 'Alexandra', lastName: 'Naum' }
-found!
-0
-[ 'Orduna-Malea, Enrique' ]
-[ 'Regazzi, John J.' ]
-[ 'Regazzi, John J.' ]
-{ firstName: 'Enrique', lastName: 'Orduna-Malea' }
-found!
-0
-{ firstName: 'Enrique', lastName: 'Orduna-Malea' }
-found!
-0
-[ 'Corrall, Sheila' ]
-[ 'Corrall, Sheila' ]
-[ 'Corrall, Sheila' ]
-[ 'Kennan, Mary Anne', ' Afzal, Waseem' ]
-[ 'Kennan, Mary Anne' ]
-[ 'Kennan, Mary Anne' ]
-[ 'Kennan, Mary Anne' ]
-{ firstName: 'Sheila', lastName: 'Corrall' }
-found!
-0
-{ firstName: 'Sheila', lastName: 'Corrall' }
-found!
-0
-{ firstName: 'Sheila', lastName: 'Corrall' }
-found!
-0
-[ 'Buehler, Marianne A.' ]
-[ 'Buehler, Marianne A.' ]
-{ firstName: 'Marianne A.', lastName: 'Buehler' }
-found!
-0
-{ firstName: 'Cathie', lastName: 'Jilovsky' }
-found!
-0
-[ 'Altman, Micah' ]
-{ firstName: 'Micah', lastName: 'Altman' }
-found!
-0
-{ firstName: 'Ross', lastName: 'Coleman' }
-found!
-0
-{ firstName: 'Michael', lastName: 'Witt' }
-found!
-0
-{ firstName: 'JG', lastName: 'Neal' }
-found!
-0
-[ { id: 1,
-    title: 'Advancing Digital Repository Services for Faculty Primary Research Assets: An Exploratory Study',
-    publicationYear: '2014',
-    authors: 
-     [ { firstName: 'Stephen',
-         lastName: 'Kutay',
-         addresses: [ 'Calif State Univ Northridge, Northridge, CA 91330 USA.' ] } ] },
-  { id: 2,
-    title: 'Research data storage and management: library staff participation in showcasing research data at the University of Adelaide',
-    publicationYear: '2014',
-    authors: 
-     [ { firstName: 'Alexandra',
-         lastName: 'Naum',
-         addresses: [ 'Univ Adelaide, Metadata Serv, Adelaide, SA, Australia.' ] } ] },
-  { id: 3,
-    title: 'US academic libraries: understanding their web presence and their relationship with economic indicators',
-    publicationYear: '2014',
-    authors: 
-     [ { firstName: 'Enrique',
-         lastName: 'Orduna-Malea',
-         addresses: [ 'Polytech Univ Valencia UPV, Dept Audiovisual Commun Documentat & Hist Art, Valencia 46022, Spain.' ] },
-       { firstName: 'John J.',
-         lastName: 'Regazzi',
-         addresses: 
-          [ 'Long Isl Univ, Palmer Sch Lib & Informat Sci, Brookville, NY 11552 USA.',
-            'Long Isl Univ, Dept Comp Sci & Management Engn, Brookville, NY 11552 USA.' ] } ] },
-  { id: 4,
-    title: 'Bibliometrics and Research Data Management Services: Emerging Trends in Library Support for Research',
-    publicationYear: '2013',
-    authors: 
-     [ { firstName: 'Sheila',
-         lastName: 'Corrall',
-         addresses: 
-          [ 'Univ Pittsburgh, Lib & Informat Sci Program, Sch Informat Sci, Pittsburgh, PA 15260 USA.',
-            'Univ Sheffield, Informat Sch, Sheffield S10 2TN, S Yorkshire, England.',
-            'British Lib, London W1V 4BH, England.' ] },
-       { firstName: 'Mary Anne',
-         lastName: 'Kennan',
-         addresses: 
-          [ 'Charles Sturt Univ, Sch Informat Studies, Bathurst, NSW 2795, Australia.',
-            'Australian Grad Sch Management, Frank Lowy Lib, Sydney, NSW, Australia.',
-            'Univ New S Wales, Sydney, NSW 2052, Australia.',
-            'Univ Technol Sydney, Sydney, NSW 2007, Australia.' ] },
-       { firstName: 'Waseem',
-         lastName: 'Afzal',
-         addresses: [ 'Charles Sturt Univ, Sch Informat Studies, Bathurst, NSW 2795, Australia.' ] } ] },
-  { id: 7,
-    title: 'Building internal and external campus institutional repository relationships',
-    publicationYear: '2013',
-    authors: 
-     [ { firstName: 'Marianne A.',
-         lastName: 'Buehler',
-         addresses: 
-          [ 'Rochester Inst Technol, Publishing & Scholarship Support Ctr, Rochester, NY USA.',
-            'Rochester Inst Technol, RIT Digital Media Lib, Rochester, NY USA.' ] } ] },
-  { id: 8,
-    title: 'The CARM Centre: The Creation, Revelation and Evolution of a Print Repository',
-    publicationYear: '2013',
-    authors: 
-     [ { firstName: 'Cathie',
-         lastName: 'Jilovsky',
-         addresses: [ 'CAVAL Ltd, Bundoora, Vic 3083, Australia.' ] } ] },
-  { id: 9,
-    title: 'Transformative Effects of NDIIPP, the Case of the Henry A. Murray Archive',
-    publicationYear: '2009',
-    authors: 
-     [ { firstName: 'Micah',
-         lastName: 'Altman',
-         addresses: [ 'Harvard Univ, Fac Arts & Sci, Inst Quantitat Social Sci, Cambridge, MA 02138 USA.' ] } ] },
-  { id: 10,
-    title: 'Publishing and the digital library: adding value to scholarship and innovation to business',
-    publicationYear: '2009',
-    authors: 
-     [ { firstName: 'Ross',
-         lastName: 'Coleman',
-         addresses: [ 'Univ Sydney, Univ Lib, Sydney, NSW 2006, Australia.' ] } ] },
-  { id: 11,
-    title: 'Institutional Repositories and Research Data Curation in a Distributed Environment',
-    publicationYear: '2008',
-    authors: 
-     [ { firstName: 'Michael',
-         lastName: 'Witt',
-         addresses: [ 'Purdue Univ, W Lafayette, IN 47907 USA.' ] } ] },
-  { id: 12,
-    title: 'The ReCAP artifactual repository planning project',
-    publicationYear: '2004',
-    authors: 
-     [ { firstName: 'JG',
-         lastName: 'Neal',
-         addresses: [ 'Columbia Univ, Informat Serv, Butler Lib 517, New York, NY 10027 USA.' ] } ] } ]
+"Batman Univ, Dept Geol Engn, Batman, Turkey"
+1
+"Cumhuriyet Univ, Dept Geol Engn, Sivas, Turkey"
+2
+"Pamukkale Univ, Dept Geol Engn, Denizli, Turkey"
+3
+"Middle E Tech Univ, Dept Geol Engn, TR-06531 Ankara, Turkey"
+4
+"Univ Shahrood, Fac Earth Sci, Dept Petr & Econ Geol, Shahrood, Iran"
+5
+"Univ Shahrood, Fac Earth Sci, Dept Petr & Econ Geol, Shahrood, Iran"
+6
+"Univ Calif Santa Cruz, Dept Earth & Planetary Sci, Santa Cruz, CA 95064 USA"
+7
+"Univ Calif Santa Cruz, Dept Earth & Planetary Sci, Santa Cruz, CA 95064 USA"
+8
+"Oregon State Univ, Coll Earth Ocean & Atmospher Sci, Corvallis, OR 97331 USA"
+9
+"Chengdu Univ Technol, Coll Earth Sci, Chengdu 610059, Peoples R China"
+10
+"Chengdu Univ Technol, Coll Earth Sci, Chengdu 610059, Peoples R China"
+11
+"Chengdu Univ Technol, Coll Earth Sci, Chengdu 610059, Peoples R China"
+12
+"Chengdu Univ Technol, Coll Earth Sci, Chengdu 610059, Peoples R China"
+13
+"Chengdu Univ Technol, Coll Earth Sci, Chengdu 610059, Peoples R China"
+14
+"China Univ Geosci, Beijing, Peoples R China"
+15
+"Dev Res Ctr China Geol Survey, Beijing, Peoples R China"
+16
+"China Univ Geosci, Beijing, Peoples R China"
+17
+"Chinese Acad Geol Sci, Inst Mineral Resources, Beijing, Peoples R China"
+18
+"Chinese Acad Geol Sci, Inst Mineral Resources, Beijing, Peoples R China"
+19
+"Chinese Acad Sci, Inst Tibetan Plateau Res, Key Lab Continental Collis & Plateau Uplift, Beijing 100085, Peoples R China"
+20
+"Chinese Acad Sci, Inst Geol & Geophys, State Key Lab Lithospher Evolut, Beijing 100029, Peoples R China"
+21
+"Chinese Acad Sci, Inst Geol & Geophys, State Key Lab Lithospher Evolut, Beijing 100029, Peoples R China"
+22
+"Korea Basic Sci Inst, Div Earth & Environm Sci, Cheongwon Gun 363883, Chungbuk, South Korea"
+23
+"Korea Univ Sci & Technol, Dept Isotope Geochem, Taejon 305350, South Korea"
+24
+"Korea Basic Sci Inst, Div Earth & Environm Sci, Cheongwon Gun 363883, Chungbuk, South Korea"
+25
+"Korea Univ Sci & Technol, Dept Isotope Geochem, Taejon 305350, South Korea"
+26
+"Seoul Natl Univ, Sch Earth & Environm Sci, Seoul 151742, South Korea"
+27
+"Chungnam Natl Univ, Dept Geol & Earth Environm Sci, Taejon 305764, South Korea"
+28
+"Tianjin Inst Geol & Mineral Resources, Tianjin 300170, Peoples R China"
+29
+"Tianjin Inst Geol & Mineral Resources, Tianjin 300170, Peoples R China"
+30
+"Univ Granada, Dept Geodinam, E-18071 Granada, Spain"
+31
+"Univ Granada, Dept Geodinam, E-18071 Granada, Spain"
+32
+"UGR, CSIC, Inst Andaluz Ciencias Tierra, Granada 18071, Spain"
+33
+"Univ Granada, Dept Geodinam, E-18071 Granada, Spain"
+34
+"Univ Granada, Dept Geodinam, E-18071 Granada, Spain"
+35
+"UGR, CSIC, Inst Andaluz Ciencias Tierra, Granada 18071, Spain"
+36
+"UGR, CSIC, Inst Andaluz Ciencias Tierra, Granada 18071, Spain"
+37
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+38
+"Minist Land & Resources, Key Lab Sedimentary Basin &amp; Oil &amp; Gas Resources, Chengdu 610081, Peoples R China"
+39
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+40
+"Minist Land & Resources, Key Lab Sedimentary Basin &amp; Oil &amp; Gas Resources, Chengdu 610081, Peoples R China"
+41
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+42
+"Minist Land & Resources, Key Lab Sedimentary Basin &amp; Oil &amp; Gas Resources, Chengdu 610081, Peoples R China"
+43
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+44
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+45
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+46
+"Chengdu Inst Geol & Mineral Resources, Chengdu 610081, Peoples R China"
+47
+"Univ Calabria, Dipartimento Biol Ecol & Sci Terra, I-87036 Arcavacata Di Rende, CS, Italy"
+48
+"Univ Calabria, Dipartimento Biol Ecol & Sci Terra, I-87036 Arcavacata Di Rende, CS, Italy"
+49
+"Univ Calabria, Dipartimento Biol Ecol & Sci Terra, I-87036 Arcavacata Di Rende, CS, Italy"
+50
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+51
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+52
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+53
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+54
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+55
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+56
+"China Univ Geosci, Sch Earth Sci & Resources, Beijing 100083, Peoples R China"
+57
+"China Earthquake Adm, Inst Crustal Dynam, Beijing 100085, Peoples R China"
+58
+"Univ Estadual Paulista UNESP IGCE, Programa Posgrad Geociencias & Meio Ambiente, BR-13506900 Rio Claro, SP, Brazil"
+59
+"Univ Estadual Paulista UNESP IGCE, Programa Posgrad Geociencias & Meio Ambiente, BR-13506900 Rio Claro, SP, Brazil"
+60
+"Univ Vermont, Dept Geol, Burlington, VT 05405 USA"
+61
+"Univ Vermont, Rubenstein Sch Environm & Nat Resources, Burlington, VT 05405 USA"
+62
+"Univ Estadual Paulista UNESP IGCE, Dept Geol Aplicada, BR-13506900 Rio Claro, SP, Brazil"
+63
+"Univ London Imperial Coll Sci Technol & Med, Dept Earth Sci &amp; Engn, London SW7 2AZ, England"
+64
+"Scottish Univ Environm Res Ctr, E Kilbride G75 0QF, Lanark, Scotland"
+65
+"Univ Fed Mato Grosso Sul UFMS, BR-79304020 Corumba, MS, Brazil"
+66
+"Univ Aegean, Mitilini 81100, Greece"
+67
+"Natl Observ Athens, Inst Geodynam, Athens 11810, Greece"
+68
+"Natl Observ Athens, Inst Geodynam, Athens 11810, Greece"
+69
+"G dAnnunzio Univ Chieti Pescara, Dept Engn & Geol, CeRS GEO, Chieti, Italy"
+70
+"G dAnnunzio Univ Chieti Pescara, Dept Engn & Geol, CeRS GEO, Chieti, Italy"
+71
+"Univ Pavia, Dept Earth & Environm Sci, I-27100 Pavia, Italy"
+72
+"Univ Hong Kong, Dept Earth Sci, Hong Kong, Hong Kong, Peoples R China"
+73
+"Nanjing Univ, Sch Earth Sci & Engn, Nanjing 210093, Jiangsu, Peoples R China"
+74
+"SINOPEC, Wuxi Res Inst Petr Geol, Wuxi 214126, Jiangsu, Peoples R China"
+75
+"Nanjing Univ, Sch Earth Sci & Engn, Nanjing 210093, Jiangsu, Peoples R China"
+76
+"Minist Land & Resource, Key Lab Paleomagnetism &amp; Tecton Reconstruct, Beijing 100081, Peoples R China"
+77
+"Chinese Acad Geol Sci, Inst Geomech, Beijing, Peoples R China"
+
+++++++++++++++++++++++++++++++++++++++++++++
+"Batman Univ, Dept Geol Engn, Batman, Turkey"
+[ { bounds: { northeast: [Object], southwest: [Object] },
+    location: { lat: 37.881168, lng: 41.13509 },
+    location_type: 'APPROXIMATE',
+    viewport: { northeast: [Object], southwest: [Object] } },
+  { bounds: { northeast: [Object], southwest: [Object] },
+    location: { lat: 39.0949725, lng: 39.5519435 },
+    location_type: 'APPROXIMATE',
+    viewport: { northeast: [Object], southwest: [Object] } } ]
+[ [ { long_name: 'Batman', short_name: 'Batman', types: [Object] },
+    { long_name: 'Batman', short_name: 'Batman', types: [Object] },
+    { long_name: 'Batman Province',
+      short_name: 'Batman Province',
+      types: [Object] },
+    { long_name: 'Turkey', short_name: 'TR', types: [Object] } ],
+  [ { long_name: 'Batman', short_name: 'Batman', types: [Object] },
+    { long_name: 'Tunceli', short_name: 'Tunceli', types: [Object] },
+    { long_name: 'Tunceli', short_name: 'Tunceli', types: [Object] },
+    { long_name: 'Turkey', short_name: 'TR', types: [Object] } ] ]
