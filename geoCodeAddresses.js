@@ -4,10 +4,12 @@ var _ = require('underscore')
 var sleep = require('sleep')
 
 var checkedAddresses = {}
+var geoCodedAddresses = {}
+var brokenAddresses = {}
+
 var globalIndex = 0
 
 function doGeoCode(addresses) {
-  console.error('doGeoCode(' + globalIndex + ')')
   var address = JSON.stringify((addresses[globalIndex]).split(".")[0])
   
   if (checkedAddresses[address]) {
@@ -19,23 +21,32 @@ function doGeoCode(addresses) {
   }
   
   geocoder.geocode(address, function( err, coord ) {
+
     if (err)
       console.error('err: ', err)
 
     var result = null
+    var fail = null
+    console.error('doGeoCode(' + globalIndex + ')')
+
     if (coord.status === "OK") {
-      console.error(coord.results)
+      //console.error(coord.results)
       result = {
         geometry: _.pluck(coord.results, "geometry"),
         address_components: _.pluck(coord.results, "address_components")
       }
+      geoCodedAddresses[address] = result
     }
+
     else { 
-      result = "++++++" + "Geocoder failed due to: " + coord.status
-      //console.error(brokenAddresses)
+      fail = {
+        failStatus: coord.status,
+        failedAddress: address
+      }
+      brokenAddresses[address] = fail
     }
-    
-    checkedAddresses[address] = result
+  
+    checkedAddresses[address] = address
     
     sleep.usleep(500000)
     if (globalIndex < addresses.length - 1) { 
@@ -45,7 +56,14 @@ function doGeoCode(addresses) {
     
     if (globalIndex === addresses.length - 1) {
       var prettyjson = require('prettyjson');
-      console.log(prettyjson.render(checkedAddresses, {noColor: false}))
+      //console.log(prettyjson.render(checkedAddresses, {noColor: true}))
+      console.log(prettyjson.render(geoCodedAddresses, {noColor: true}))      
+      console.log("#geoCodedAddresses: " + _.size(geoCodedAddresses))
+      console.log("#brokenAddresses: " + _.size(brokenAddresses))
+
+      console.log(prettyjson.render(brokenAddresses, {noColor: true}))
+
+
     }
   })
 }
@@ -55,15 +73,6 @@ stdin(function(data) {
   var addresses = _.pluck(data, 'address');
   console.error(addresses.length)
   doGeoCode(addresses)
-  /*
   
-  var address
-  for (var i = 0; i < addresses.length; i++) {
-    address = JSON.stringify((addresses[i]).split(".")[0])
-    console.error(address)
-    geoCode(address)
-  }
   
-  console.error(brokenAddresses)
-  */
 })
